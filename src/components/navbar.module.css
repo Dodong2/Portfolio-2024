@@ -1,0 +1,29 @@
+:root {
+    --red: red;
+    --white: rgb(246, 246, 246);
+    --black: rgb(50, 50, 50);
+    --fonts: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+nav {
+    max-height: 100px;
+    height: 100%;
+}
+
+.left, .right {
+    border: 1px solid red;
+    color: blanchedalmond;
+}
+
+.left ul {
+    display: flex;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.left ul li {
+    margin-right: 50px;
+    text-decoration: none;
+    list-style: none;
+    font-family: var(--fonts);
+}
