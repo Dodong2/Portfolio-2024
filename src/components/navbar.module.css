@@ -1,29 +1,109 @@
+html, body {
+    height: 100%;
+}
+::-webkit-scrollbar {
+    display: none;
+}
 :root {
     --red: red;
-    --white: rgb(246, 246, 246);
-    --black: rgb(50, 50, 50);
-    --fonts: Verdana, Geneva, Tahoma, sans-serif;
+    --white: white;
+    --black: black;
+    --gray: rgb(121, 121, 121);
+    --skyblue: rgb(135, 207, 255);
+    --fonts: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100; 
+    background: none;
+    border-radius: 0px 0px 20px 20px;
+    margin-bottom: 0;
 }
 
 nav {
-    max-height: 100px;
-    height: 100%;
+    transition: all .5s;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
-
+/*Left Properties*/
 .left, .right {
-    border: 1px solid red;
-    color: blanchedalmond;
+    padding: 10px;
 }
-
 .left ul {
-    display: flex;
-    text-align: center;
-    margin-top: 20px;
+    font-size: 20px;
 }
 
-.left ul li {
-    margin-right: 50px;
+.left li {
     text-decoration: none;
     list-style: none;
     font-family: var(--fonts);
+    font-weight:550;
+    font-style: italic;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-right: 20px;
 }
+
+.left ul li a {
+    text-decoration: none;
+    
+}
+
+li a::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background: var(--skyblue);
+    margin: auto;
+    display: block;
+}
+
+li a:hover::after {
+    width: 100%;
+    transition: 0.3s linear;
+}
+
+li a:hover {
+    letter-spacing: 0.3em;
+    transition: 0.3s;
+    color: var(--skyblue);
+    text-shadow: 2px 2px 3px var(--skyblue);
+}
+/* ito ay para sa data-bs-theme once na matoggle yung btn mag-dark yung gustong elements */
+ul, li, a, body, p, .menu {
+    color: var(--black);
+    transition: all .5s;
+  }
+/* ito ay para sa data-bs-theme once na matoggle yung btn mag-white yung gustong elements */
+[data-bs-theme="dark"] ul, 
+[data-bs-theme="dark"] li, 
+[data-bs-theme="dark"] a, 
+[data-bs-theme="dark"] body, 
+[data-bs-theme="dark"] p, 
+[data-bs-theme="dark"] .menu {
+    color: var(--white);
+    transition: all .5s;
+  }
+
+  /*Right properties*/
+  .right {
+    display: flex;
+  }
+.right input {
+    justify-content: end;
+}
+
+/*sidebar*/
+.sidebar {
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: var(--gray);
+}
+
