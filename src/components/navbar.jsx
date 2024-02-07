@@ -1,6 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import { RiMenu4Fill} from "react-icons/ri";
 import { IoCloseSharp } from "react-icons/io5";
+import { FaHome } from "react-icons/fa";
+import { GiSkills } from "react-icons/gi";
+import { MdContactPhone } from "react-icons/md";
 import style from './navbar.module.css'
 import { useState } from 'react'
 
@@ -28,13 +31,24 @@ const Navbar = () => {
       {/* left */}
         <div className={style.left}>
         <div className={`d-lg-none align-self-center`} onClick={ShowNav}><RiMenu4Fill className={style.menu}/></div>
-          <ul className={`d-sm-none d-lg-flex d-xl-flex ${isShow ? `d-block d-md-block d-sm-block d-xl-block ps-1 ${style.sidebar}` : 'd-none'}`}>
-            {/* ito yung sa ul na kapag nakashow yung closed btn at line hr kasama makikita sa sidebar */}
-              {isShow && (<div className={`d-lg-none align-self-center`}> <IoCloseSharp onClick={ShowNav} /> <hr /> </div>)}
-                <li><a href='#home'>Home</a></li>
-                <li><a href='#skill'>Skills</a></li>
-                <li><a href='#contact'>contacts</a></li>
+          <ul className={`d-sm-none d-lg-flex d-none`}>
+                <li><a href='#home'><FaHome className={style.icons}/>Home</a></li>
+                <li><a href='#skill'><GiSkills className={style.icons}/>Skills</a></li>
+                <li><a href='#contact'><MdContactPhone className={style.icons}/>contacts</a></li>
           </ul>
+
+
+            <div className={`d-sm-block d-lg-none ${isShow ? '' : 'd-none'} ${style.sidebar}`}>
+            {/* ito yung sa ul na kapag nakashow yung closed btn at line hr kasama makikita sa sidebar */}
+            {isShow && (<div className={`d-lg-none align-self-center`}> <IoCloseSharp onClick={ShowNav} className={style.menu}/> <hr className={style.menu}/> 
+            <ul>
+            <li><a href='#home'><FaHome className={style.icons}/>Home</a></li>
+                <li><a href='#skill'><GiSkills className={style.icons}/>Skills</a></li>
+                <li><a href='#contact'><MdContactPhone className={style.icons}/>contacts</a></li>
+            </ul>
+            </div>)}
+                
+            </div>
         </div>
       {/* right */}
       <div className={style.right}>

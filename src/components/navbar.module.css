@@ -44,14 +44,13 @@ nav {
     font-family: var(--fonts);
     font-weight:550;
     font-style: italic;
-    text-transform: uppercase;
+    
     margin-top: 10px;
     margin-right: 20px;
 }
 
 .left ul li a {
     text-decoration: none;
-    
 }
 
 li a::after {
@@ -73,6 +72,9 @@ li a:hover {
     transition: 0.3s;
     color: var(--skyblue);
     text-shadow: 2px 2px 3px var(--skyblue);
+}
+.icons {
+margin-right: 10px;
 }
 /* ito ay para sa data-bs-theme once na matoggle yung btn mag-dark yung gustong elements */
 ul, li, a, body, p, .menu {
