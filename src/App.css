@@ -1,0 +1,219 @@
+* {
+ box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+:root {
+    --red: red;
+    --white: white;
+    --black: black;
+    --gray: rgb(121, 121, 121);
+    --skyblue: rgb(135, 207, 255);
+    --fonts: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+@font-face {
+    font-family: "Poppins";
+    src: url("./components/fonts/Poppins-Light.ttf");
+  }
+  @font-face {
+    font-family: "Poppins-Bold";
+    src: url("./components/fonts/Poppins-Bold.ttf");
+  }
+
+body {
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+} 
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100; 
+    background: none;
+    border-radius: 0px 0px 20px 20px;
+    margin-bottom: 0;
+}
+
+nav {
+    transition: all .5s;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+/*Left Properties*/
+.left, .right {
+    padding: 10px;
+}
+.left ul {
+    font-size: 20px;
+}
+
+.left li {
+    text-decoration: none;
+    list-style: none;
+    font-family: "Poppins-bold";
+    font-weight:550;
+    font-style: italic;
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
+.left ul li a {
+    text-decoration: none;
+}
+
+li a::after {
+    content: "";
+    width: 0;
+    height: 3px;
+    background: var(--skyblue);
+    margin: auto;
+    display: block;
+}
+
+li a:hover::after {
+    width: 100%;
+    transition: 0.3s linear;
+}
+
+li a:hover {
+    letter-spacing: 0.3em;
+    transition: 0.3s;
+    color: var(--skyblue);
+    text-shadow: 2px 2px 3px var(--skyblue);
+}
+.icons {
+margin-right: 10px;
+}
+/* ito ay para sa data-bs-theme once na matoggle yung btn mag-dark yung gustong elements */
+ul, li, a, body, p, .menu, .width, .txt-left {
+    color: var(--black);
+    transition: all .5s;
+  }
+/* ito ay para sa data-bs-theme once na matoggle yung btn mag-white yung gustong elements */
+[data-bs-theme="dark"] ul, 
+[data-bs-theme="dark"] li, 
+[data-bs-theme="dark"] a, 
+[data-bs-theme="dark"] body, 
+[data-bs-theme="dark"] p, 
+[data-bs-theme="dark"] .menu,
+[data-bs-theme="dark"] .width,
+[data-bs-theme="dark"] .txt-left {
+    color: var(--white);
+    transition: all .5s;
+  }
+
+  /*Right properties*/
+  .right {
+    display: flex;
+  }
+.right input {
+    justify-content: end;
+}
+
+/*sidebar*/
+.sidebar {
+    position: absolute;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    overflow: hidden;
+    width: -300px;
+    background: var(--gray);
+    transition: all 0.5s ease;
+}
+.sidebar.open {
+    left: -250px;
+    transition: all ease-in-out.5;
+}
+
+
+.width {
+    max-width: 250px;
+    padding: 0;
+}
+
+/* Pages */
+.main {
+    display: flex;
+    flex: 1;
+}
+
+/* Home Pages CSS */
+.main .home {
+    border: 1px solid red;
+    display: flex;
+    flex: 1;
+    margin-top: 90px;
+}
+.home .txt-left {
+    flex: 1 1 100px;
+    padding: 3em 0 0 0;
+    display: flex;
+    justify-content: center;
+}
+.home .txt-left .txt-left-child {
+    font-size: clamp(1rem, 0.3043rem + 3.4783vw, 1px);
+    font-family: "Poppins-Bold";
+    font-weight: 100;
+    line-height: 10px;
+    letter-spacing: 2px;
+}
+.home .txt-left .txt-left-child h1 {
+    line-height: 30px;
+    letter-spacing: 2px;
+}
+.home .img-right {
+    flex: 1 1 100px;
+    padding: 0 0 0 0;
+    display: grid;
+    place-items: center;
+}
+.home .img-right img {
+    height: 300px;
+    width: 300px;
+}
+
+/* Skill Pages CSS */
+.main .skill {
+    border: 1px solid green;
+    padding: 3em 0 3em 0;
+    flex: 1 1 100px;
+    text-align: center;
+    width: fit-content;
+    font-size: 5em;
+}
+
+
+/* Contact Pages CSS */
+.main .cont {
+    border: 1px solid blue;
+    padding: 3em 0 3em 0;
+    flex: 1 1 100px;
+    text-align: center;
+    width: fit-content;
+    font-size: 5em;
+}
+
+/* Typeswriters CSS */
+.mess h1 {
+    font-size: clamp(1.5rem, 0.3043rem + 3.4783vw, 1rem);
+}
+
+@media all and (max-width: 550px) {
+    .home {
+        flex-direction: column-reverse;
+    }
+    main {
+        padding: 5em 0 5em 0;
+    }
+}
