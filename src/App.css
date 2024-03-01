@@ -14,7 +14,10 @@ html, body {
     --black: black;
     --gray: rgb(121, 121, 121);
     --skyblue: rgb(135, 207, 255);
-    --fonts: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    --opyellow: rgba(244, 244, 0, 0.426);
+    --darkBlue: #00008B;
+    --opdarkBlue: #00008b60;
+
 }
 @font-face {
     font-family: "Poppins";
@@ -182,7 +185,44 @@ ul, li, a, body, p, .menu, .width, .txt-left {
     height: 300px;
     width: 300px;
 }
+/*buttons home page*/
+.txt-left .txt-left-child .btn {
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border: 1px solid var(--black);
+    border-radius: 20px;
+    color: var(--black);
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background: none;
+}
 
+.txt-left .txt-left-child .btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--opdarkBlue);
+    transition: left 0.5s ease;
+}
+
+.txt-left .txt-left-child .btn:hover:before {
+    left: 0;
+}
+.txt-left .txt-left-child .btn:hover {
+    box-shadow: 0px 0px 15px var(--opdarkBlue);
+    letter-spacing: 0.3em;
+    transition: 0.5s ease;
+}
+[data-bs-theme="dark"] .txt-left .txt-left-child .btn {
+    border: 1px solid var(--white);
+    color: var(--white);
+} 
 /* Skill Pages CSS */
 .main .skill {
     border: 1px solid green;
@@ -208,7 +248,17 @@ ul, li, a, body, p, .menu, .width, .txt-left {
 .mess h1 {
     font-size: clamp(1.5rem, 0.3043rem + 3.4783vw, 1rem);
 }
+.mess span {
+    color: var(--darkBlue);
+    text-shadow: 1px 1px 2px var(--darkBlue);
+    transition: all .5s;
 
+}
+[data-bs-theme="dark"] .mess span {
+    color: var(--skyblue);
+    text-shadow: 1px 1px 2px var(--skyblue);
+    transition: all .5s;
+}
 @media all and (max-width: 550px) {
     .home {
         flex-direction: column-reverse;

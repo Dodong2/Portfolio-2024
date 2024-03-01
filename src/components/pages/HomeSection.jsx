@@ -12,6 +12,7 @@ const HomeSection = () => {
               <h1>Carl Arocha</h1>
               <Typewriter/>
               <p>Working as Web Development Front-End.</p>
+              <button className="btn">Greetings</button>
               </div>
             </div>
             <div className="img-right">

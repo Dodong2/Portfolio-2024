@@ -10,7 +10,7 @@ const Typewriters = () => {
   return (
     <>
     <div className='mess'>
-    <h1> I am a {text}
+    <h1> I am a <span>{text}</span>
         <Cursor cursorStyle="|"/>
         </h1>
     </div>
