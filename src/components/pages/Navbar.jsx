@@ -98,18 +98,21 @@ const Navbar = () => {
                         Home
                       </a>
                     </li>
+                    <hr/>
                     <li>
                       <a href="#skill">
                         <GiSkills className="icons" />
                         Skills
                       </a>
                     </li>
+                    <hr/>
                     <li>
                       <a href="#contact">
                         <BsFillTelephoneFill className="icons" />
                         Contacts
                       </a>
                     </li>
+                    <hr/>
                   </ul>
                 </div>
               </div>

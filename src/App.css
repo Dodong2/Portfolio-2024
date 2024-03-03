@@ -11,12 +11,12 @@ html, body {
 :root {
     --red: red;
     --white: white;
+    --opwhite: rgb(214, 214, 214);
     --black: black;
     --gray: rgb(121, 121, 121);
     --skyblue: rgb(135, 207, 255);
     --opyellow: rgba(244, 244, 0, 0.426);
     --darkBlue: #00008B;
-    --opdarkBlue: #00008b60;
 
 }
 @font-face {
@@ -97,7 +97,8 @@ li a:hover {
 margin-right: 10px;
 }
 /* ito ay para sa data-bs-theme once na matoggle yung btn mag-dark yung gustong elements */
-ul, li, a, body, p, .menu, .width, .txt-left {
+ul, li, a, body, p, .menu, .width, .txt-left 
+.home .txt-left .txt-left-child span:nth-child(2) {
     color: var(--black);
     transition: all .5s;
   }
@@ -153,9 +154,9 @@ ul, li, a, body, p, .menu, .width, .txt-left {
 
 /* Home Pages CSS */
 .main .home {
-    border: 1px solid red;
     display: flex;
     flex: 1;
+    padding: 3em 0 3em 0;
     margin-top: 90px;
 }
 .home .txt-left {
@@ -167,24 +168,32 @@ ul, li, a, body, p, .menu, .width, .txt-left {
 .home .txt-left .txt-left-child {
     font-size: clamp(1rem, 0.3043rem + 3.4783vw, 1px);
     font-family: "Poppins-Bold";
-    font-weight: 100;
-    line-height: 10px;
-    letter-spacing: 2px;
+    font-weight: 500px;
+    line-height: 20px;
 }
+
 .home .txt-left .txt-left-child h1 {
     line-height: 30px;
     letter-spacing: 2px;
+    font-family: "Poppins-Bold";
 }
-.home .img-right {
-    flex: 1 1 100px;
-    padding: 0 0 0 0;
-    display: grid;
-    place-items: center;
+.home .txt-left .txt-left-child .see:nth-child(1), 
+.home .txt-left .txt-left-child span:nth-child(2) {
+    color: transparent;
+    -webkit-text-stroke: 2.5px var(--black);
+    background-color: transparent;
 }
-.home .img-right img {
-    height: 300px;
-    width: 300px;
+
+[data-bs-theme="dark"] .home .txt-left .txt-left-child .see:nth-child(1), 
+[data-bs-theme="dark"] .home .txt-left .txt-left-child span:nth-child(2) {
+    -webkit-text-stroke: 2.5px var(--white);
+    transition: all .5s;
 }
+
+.txt-left-child .txt-ab {
+    position: absolute;
+}
+
 /*buttons home page*/
 .txt-left .txt-left-child .btn {
     padding: 10px;
@@ -192,7 +201,6 @@ ul, li, a, body, p, .menu, .width, .txt-left {
     padding-right: 30px;
     border: 1px solid var(--black);
     border-radius: 20px;
-    color: var(--black);
     outline: none;
     cursor: pointer;
     position: relative;
@@ -207,36 +215,99 @@ ul, li, a, body, p, .menu, .width, .txt-left {
     left: -100%;
     width: 100%;
     height: 100%;
-    background-color: var(--opdarkBlue);
+    background-color: var(--skyblue);
     transition: left 0.5s ease;
+    z-index: -100;
 }
 
 .txt-left .txt-left-child .btn:hover:before {
     left: 0;
+    
 }
 .txt-left .txt-left-child .btn:hover {
-    box-shadow: 0px 0px 15px var(--opdarkBlue);
+    box-shadow: 0px 0px 15px var(--skyblue);
     letter-spacing: 0.3em;
     transition: 0.5s ease;
 }
+
+.txt-left .txt-left-child .txt-ab .btn-home {
+    display: flex;
+    gap: 20px;
+}
+
 [data-bs-theme="dark"] .txt-left .txt-left-child .btn {
     border: 1px solid var(--white);
     color: var(--white);
 } 
-/* Skill Pages CSS */
-.main .skill {
-    border: 1px solid green;
-    padding: 3em 0 3em 0;
+
+.home .img-right {
     flex: 1 1 100px;
-    text-align: center;
-    width: fit-content;
-    font-size: 5em;
+    padding: 0 0 0 0;
+    display: grid;
+    place-items: center;
+}
+.home .img-right img {
+    height: 300px;
+    width: 300px;
 }
 
+/* Skill Pages CSS */
+.main .skill {
+    display: flex;
+    flex: 1 1 100px;
+    flex-wrap: wrap;
+    padding: 8em 0 8em 0;
+    justify-content: space-around;
+    align-items: center;
+    width: fit-content;
+    position: relative;
+    margin-top: 50px;
+}
+.skill .card {
+    width: 18rem;
+    font-size: clamp(1rem, 0.3043rem + 3.4783vw, 1rem);
+    margin: 10px;
+}
+
+/* ttl-bg for card properties */
+.ttl-bg {
+    background: var(--gray);
+    color: var(--white);
+}
+[data-bs-theme="dark"] .ttl-bg {
+    background: var(--opwhite);
+    color: var(--black);
+    transition: all .5s;
+}
+[data-bs-theme="dark"] .skill-ttl, [data-bs-theme="dark"] .skill-ttl-end{
+    color: var(--white);
+    transition: all .5s;
+}
+.skill-ttl {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.skill-ttl h1 span {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--black);
+    background-color: transparent;
+}
+[data-bs-theme="dark"] .skill-ttl h1 span {
+    -webkit-text-stroke: 1.5px var(--white);
+    transition: all .5s;
+}
+.skill-ttl-end {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
 /* Contact Pages CSS */
 .main .cont {
-    border: 1px solid blue;
     padding: 3em 0 3em 0;
     flex: 1 1 100px;
     text-align: center;
@@ -259,11 +330,36 @@ ul, li, a, body, p, .menu, .width, .txt-left {
     text-shadow: 1px 1px 2px var(--skyblue);
     transition: all .5s;
 }
+
+
+/* Responsive Media */
 @media all and (max-width: 550px) {
+    main {
+        padding: 5em 0 5em 0;
+    }
+    /*Home properties media*/
     .home {
         flex-direction: column-reverse;
     }
-    main {
-        padding: 5em 0 5em 0;
+    .home .txt-left {
+        flex: 1 1 100px;
+        padding: 0 0 0 0;
+        display: flex;
+        text-align: center;
+    }
+    .txt-left-child .txt-ab {
+        text-align: center;
+        position: relative;
+    }
+    .txt-left .txt-left-child .txt-ab .btn-home {
+        justify-content: center;
+    }
+    /* Skill porperties media*/
+    .skill {
+        flex-direction:column;
+    }
+    /* Typeswriters CSS media */
+    .mess h1 {
+        font-size: clamp(1.2rem, 0.3043rem + 3.4783vw, 1rem);
     }
 }
