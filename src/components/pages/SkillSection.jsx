@@ -19,7 +19,19 @@ const SkillSection = () => {
         <div className='skill-ttl'>
         <h1><span>S</span>kill</h1>
         </div>
-        <div className="card">
+      {/* Backend*/}
+      <div className="card">
+      <ul className="list-group list-group-flush">
+        <li className="list-group-item text-"><SiPhp/> PHP</li>
+        <li className="list-group-item"><SiXampp/> Xampp</li>
+        <li className="list-group-item"><TbBrandNodejs/> Node.JS</li>
+      </ul>
+      <div className="card-footer fs-5 fw-bold text-center ttl-bg">
+        BACK-END
+      </div>
+    </div>
+    {/* Frontend*/}
+    <div className="card">
         <ul className="list-group list-group-flush">
           <li className="list-group-item"><ImHtmlFive/> HTML</li>
           <li className="list-group-item"><IoLogoCss3/> CSS</li>
@@ -32,29 +44,12 @@ const SkillSection = () => {
           FRONT-END
         </div>
       </div>
-      {/* Backend*/}
-      <div className="card">
-      <ul className="list-group list-group-flush">
-        <li className="list-group-item text-"><SiPhp/> PHP</li>
-        <li className="list-group-item"><SiXampp/> Xampp</li>
-        <li className="list-group-item"><TbBrandNodejs/> Node.JS</li>
-        <li className="list-group-item">--</li>
-        <li className="list-group-item">--</li>
-        <li className="list-group-item">--</li>
-      </ul>
-      <div className="card-footer fs-5 fw-bold text-center ttl-bg">
-        BACK-END
-      </div>
-    </div>
     {/* Other Languages*/}
     <div className="card">
       <ul className="list-group list-group-flush">
         <li className="list-group-item text-"><SiVite/> Vite</li>
         <li className="list-group-item"><TbBrandNextjs/> Next.JS</li>
         <li className="list-group-item"><BiLogoTailwindCss/> Tailwind</li>
-        <li className="list-group-item">--</li>
-        <li className="list-group-item">--</li>
-        <li className="list-group-item">--</li>
       </ul>
       <div className="card-footer fs-5 fw-bold text-center ttl-bg">
         OTHER

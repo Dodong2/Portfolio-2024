@@ -7,6 +7,7 @@ const Typewriters = () => {
     typesSpeed: 120,
     deleteSpeed: 80,
   });
+  
   return (
     <>
     <div className='mess'>

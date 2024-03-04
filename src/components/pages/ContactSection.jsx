@@ -1,11 +1,12 @@
-
+import 'bootstrap/dist/css/bootstrap.css'
+import 'bootstrap/dist/js/bootstrap'
 const ContactSection = () => {
   return (
     <section id="contact">
       <div className='main'>
         <div className='cont'>
-        <p>Contact</p>
-        </div>
+            Contact
+              </div>
         </div>
       </section>
   )
