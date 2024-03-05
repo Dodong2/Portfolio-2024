@@ -5,10 +5,6 @@ import SkillSection from './components/pages/SkillSection'
 import ContactSection from './components/pages/ContactSection'
 import './App.css'
 function App() {
-  
-
-
-
   return (
     <>
     <Navbar/>

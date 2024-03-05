@@ -12,6 +12,7 @@ const Navbar = () => {
   const ShowNav = () => {
     setShow(!isShow);
   };
+  
   //toggle btn background dark
   const [isChecked, setIsChecked] = useState(true);
   const myFunction = () => {
@@ -20,6 +21,11 @@ const Navbar = () => {
       element.dataset.bsTheme == "dark" ? "light" : "dark";
     setIsChecked(!isChecked);
   };
+  /* For title */
+  const handleClick = (title) => {
+    document.title = title;
+  };
+  
 
   return (
     <>
@@ -40,19 +46,19 @@ const Navbar = () => {
               {/*<div className={`d-lg-none align-self-center`} onClick={ShowNav}><RiMenu4Fill className={style.menu}/></div>*/}
               <ul className={`d-sm-none d-lg-flex d-none`}>
                 <li>
-                  <a href="#home">
+                  <a href="#home" onClick={() => handleClick('Home')}>
                     <FaHome className="icons" />
                     Home
                   </a>
                 </li>
                 <li>
-                  <a href="#skill">
+                  <a href="#skill" onClick={() => handleClick('Skills')}>
                     <GiSkills className="icons" />
                     Skills
                   </a>
                 </li>
                 <li>
-                  <a href="#contact">
+                  <a href="#contact" onClick={() => handleClick('Contacts')}>
                     <BsFillTelephoneFill className="icons" />
                     Contacts
                   </a>
