@@ -229,6 +229,7 @@ ul, li, a, body, p, .menu, .width, .txt-left
     box-shadow: 0px 0px 15px var(--skyblue);
     letter-spacing: 0.3em;
     transition: 0.5s ease;
+    color: var(--black);
 }
 
 .txt-left .txt-left-child .txt-ab .btn-home {
@@ -238,7 +239,7 @@ ul, li, a, body, p, .menu, .width, .txt-left
 
 [data-bs-theme="dark"] .txt-left .txt-left-child .btn {
     border: 1px solid var(--white);
-    color: var(--white);
+    
 } 
 [data-bs-theme="dark"] .modal-footer .btn {
     background: var(--white);
@@ -327,13 +328,74 @@ ul, li, a, body, p, .menu, .width, .txt-left
 }
 
 /* Contact Pages CSS */
-.main .cont {
-    padding: 3em 0 3em 0;
-    flex: 1 1 100px;
+.cont-head {
+    padding: 1em 0 1em 0;
     text-align: center;
-    width: fit-content;
-    font-size: 5em;
 }
+.main .cont {
+    display: flex;
+    flex: 1;
+    border: 1px solid red;
+    width: fit-content;
+}
+.cont .social-contact {
+    flex: 1 1 100px;
+    border: 1px solid red;
+    display: flex;
+    justify-content: center;
+    padding: 3em 0 3em 0;
+}
+.social-contact .btn-cont {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.cont-icons {
+    width: 20px;
+    margin-right: 10px;
+    margin-left: 3px;
+}
+
+.btn-cont .btn {
+    padding: 10px;
+    border: 1px solid var(--black);
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    background: none;
+    width: 250px;
+    text-align: left;
+}
+.btn-cont .btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--skyblue);
+    transition: left 0.5s ease;
+    z-index: -100;
+}
+.btn-cont  .btn:hover:before {
+    left: 0;
+}
+.btn-cont .btn:hover {
+    box-shadow: 0px 0px 15px var(--skyblue);
+    transition: 0.5s ease;
+    color: var(--black);
+}
+[data-bs-theme="dark"] .btn-cont .btn {
+    border: 1px solid var(--white);
+} 
+.cont .direct-contact {
+    flex: 1 1 100px;
+    border: 1px solid red;
+    width: fit-content;
+}
+
+
 
 /* Typeswriters CSS */
 .mess h1 {
@@ -376,8 +438,11 @@ ul, li, a, body, p, .menu, .width, .txt-left
         justify-content: center;
     }
     /* Skill porperties media*/
-    .skill {
+    .main .skill {
         flex-direction:column;
+    }
+    .main .cont {
+        flex-direction: column;
     }
     /* Typeswriters CSS media */
     .mess h1 {
