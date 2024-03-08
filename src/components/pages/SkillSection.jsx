@@ -13,12 +13,12 @@ import { TbBrandNextjs } from "react-icons/tb";
 import { BiLogoTailwindCss } from "react-icons/bi";
 const SkillSection = () => {
   return (
-    <section id="skill">
-      <div className='main'>
-        <div className='skill shadow'>
-        <div className='skill-ttl'>
+    <section id="skill" className='shadow'>
+    <div className='skill-ttl'>
         <h1><span>S</span>kill</h1>
         </div>
+      <div className='main'>
+        <div className='skill'>
       {/* Backend*/}
       <div className="card">
       <ul className="list-group list-group-flush">
@@ -55,9 +55,6 @@ const SkillSection = () => {
         OTHER
       </div>
     </div>
-    <div className='skill-ttl-end'>
-        <h5>still in progress and ready to learn...</h5>
-        </div>
       </div>
         </div>
       </section>

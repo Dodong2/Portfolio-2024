@@ -31,7 +31,7 @@ const ContactSection = () => {
   return (
     <section id="contact">
       <div className="cont-head">
-        <h1>Contact</h1>
+        <h1><span>C</span>ontact</h1>
       </div>
       <div className="main">
         <div className="cont">
@@ -56,19 +56,28 @@ const ContactSection = () => {
             </div>
           </div>
           <div className="direct-contact">
-            <form>
+          <div className="fill-up-forms">
+            <form id="fillup">
+            <input type="text" placeholder="Name" id="opname" required/>
               <input
-                type="text"
+                type="email"
                 placeholder="Enter your email"
                 required
                 pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                id="gmail"
               />
+              <input type="text" placeholder="Subject" id="subject" required/>
+              <textarea rows="5" cols="50" name="discription" placeholder="Your Message" id="message" required></textarea>
               <button type="submit" value="submit">
                 Submit
               </button>
             </form>
+            </div>
           </div>
         </div>
+      </div>
+      <div className="cont-footer">
+      <h1>Thank you</h1>
       </div>
     </section>
   );
