@@ -1,11 +1,13 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap";
 import { RiMenu4Fill } from "react-icons/ri";
-import { IoCloseSharp } from "react-icons/io5";
 import { FaHome } from "react-icons/fa";
 import { GiSkills } from "react-icons/gi";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { useState } from "react";
+import { FaShareFromSquare } from "react-icons/fa6";
+import { FaShareAlt } from "react-icons/fa";
+import Me from '../images/dong.png'
 
 const Navbar = () => {
   const [isShow, setShow] = useState(false);
@@ -84,10 +86,13 @@ const Navbar = () => {
                 id="offcanvasScrolling"
                 aria-labelledby="offcanvasScrollingLabel"
               >
-                <div className="offcanvas-header">
-                  <h5 className="offcanvas-title" id="offcanvasScrollingLabel">
-                    Testing pa ito
-                  </h5>
+                <div className="header p-2">
+                  <div className="offcanvas-title" id="offcanvasScrollingLabel">
+                  <div></div>            
+                  </div>
+                  <div className="sidebar-img">
+                    <img src={Me} />
+                    </div>
                   <button
                     type="button"
                     className="btn-close"
@@ -120,6 +125,12 @@ const Navbar = () => {
                     </li>
                     <hr/>
                   </ul>
+                </div>
+                <hr/>
+                <div className="sidebar-footer">
+                <div className=" ">
+                <FaShareAlt/>
+                </div>
                 </div>
               </div>
             </div>
