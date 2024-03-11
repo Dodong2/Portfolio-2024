@@ -1,7 +1,6 @@
 import Me from "../images/dong.png";
 import Typewriter from "./Typewriters";
 import { FaGithub } from "react-icons/fa";
-import { GiSkills } from "react-icons/gi";
 import { FaFacebook } from "react-icons/fa";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap";
@@ -11,6 +10,7 @@ const HomeSection = () => {
       <section id="home">
         <div className="main">
           <div className="home shadow">
+          {/* Text left */}
             <div className="txt-left">
               <div className="txt-left-child">
                 <h1>Hi, I am</h1>
@@ -38,6 +38,7 @@ const HomeSection = () => {
                 </div>
               </div>
             </div>
+            {/* Image right */}
             <div className="img-right">
               <img src={Me} />
             </div>
@@ -45,7 +46,7 @@ const HomeSection = () => {
         </div>
       </section>
 
-      {/*Modal*/}
+      {/*Modal for greetings */}
       <div
         className="modal fade"
         id="exampleModal"

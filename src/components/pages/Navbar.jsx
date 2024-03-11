@@ -5,15 +5,14 @@ import { FaHome } from "react-icons/fa";
 import { GiSkills } from "react-icons/gi";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { useState } from "react";
-import { FaShareFromSquare } from "react-icons/fa6";
 import { FaShareAlt } from "react-icons/fa";
 import Me from '../images/dong.png'
 
 const Navbar = () => {
-  const [isShow, setShow] = useState(false);
-  const ShowNav = () => {
-    setShow(!isShow);
-  };
+  // const [isShow, setShow] = useState(false);
+  // const ShowNav = () => {
+  //   setShow(!isShow);
+  // };
   
   //toggle btn background dark
   const [isChecked, setIsChecked] = useState(true);
@@ -28,7 +27,19 @@ const Navbar = () => {
     document.title = title;
   };
   
+  /* para ma copy yung link ng site */
+  const copyLinkToClipboard = () => {
+    const currentURL = window.location.href;
+    navigator.clipboard.writeText(currentURL)
+      .then(() => {
+        alert('Carl: Link copied to clipboard!, thank you for sharing.');
+      })
+      .catch((error) => {
+        console.error('Failed to copy link: ', error);
+      });
+  };
 
+  /* End of para ma-copy yung link ng site */
   return (
     <>
       <header>
@@ -66,7 +77,7 @@ const Navbar = () => {
                   </a>
                 </li>
               </ul>
-
+            {/* for show navbar wala lang to */}
               {/*<div className={`d-sm-block d-lg-none ${isShow ? 'open' : ''}`}>
             /ito yung sa ul na kapag nakashow yung closed btn at line hr kasama makikita sa sidebar/
             {isShow && (<div className={`d-lg-none align-self-center ${style.sidebar}`}> <IoCloseSharp onClick={ShowNav} className={style.menu}/> <hr className={style.menu}/> 
@@ -128,7 +139,7 @@ const Navbar = () => {
                 </div>
                 <hr/>
                 <div className="sidebar-footer">
-                <div className=" ">
+                <div className="" onClick={copyLinkToClipboard}>
                 <FaShareAlt/>
                 </div>
                 </div>
@@ -147,6 +158,7 @@ const Navbar = () => {
                   onChange={myFunction}
                 />
               </div>
+              <h1></h1>
             </div>
           </div>
         </nav>

@@ -3,6 +3,8 @@ import { FaLinkedin } from "react-icons/fa";
 import { MdContactPhone } from "react-icons/md";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap";
+import { useRef } from "react";
+import emailjs from "@emailjs/browser";
 const ContactSection = () => {
   /* for copy the context on button */
   const handleClick = () => {
@@ -28,13 +30,37 @@ const ContactSection = () => {
     alert("Text copied to clipboard: " + buttonText);
   };
 
+  /* Email.js library */
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm("service_345facs", "template_u1bdmy5", form.current, {
+        publicKey: "pcVUpUfKq-HRj0GQI",
+      })
+      .then(
+        () => {
+          console.log("SUCCESS!");
+          e.target.reset();
+        },
+        (error) => {
+          console.log("FAILED...", error.text);
+        }
+      );
+  };
+  /* End Email.js library */
   return (
     <section id="contact">
       <div className="cont-head">
-        <h1><span>C</span>ontact</h1>
+        <h1>
+          <span>C</span>ontact
+        </h1>
       </div>
       <div className="main">
         <div className="cont">
+          {/* Social Contact left side */}
           <div className="social-contact">
             <div className="btn-cont">
               <a href="https://web.facebook.com/carlstephen.cazenas/">
@@ -55,29 +81,52 @@ const ContactSection = () => {
               </button>
             </div>
           </div>
+          {/* Direct Contact right side */}
           <div className="direct-contact">
-          <div className="fill-up-forms">
-            <form id="fillup">
-            <input type="text" placeholder="Name" id="opname" required/>
-              <input
-                type="email"
-                placeholder="Enter your email"
-                required
-                pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
-                id="gmail"
-              />
-              <input type="text" placeholder="Subject" id="subject" required/>
-              <textarea rows="5" cols="50" name="discription" placeholder="Your Message" id="message" required></textarea>
-              <button type="submit" value="submit">
-                Submit
-              </button>
-            </form>
+            <div className="fill-up-forms">
+              <form id="fillup" ref={form} onSubmit={sendEmail}>
+                <input
+                  type="text"
+                  name="from_name"
+                  placeholder="Name"
+                  id="opname"
+                  required
+                />
+                <input
+                  type="email"
+                  name="from_email"
+                  placeholder="Enter your email"
+                  required
+                  pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+                  id="gmail"
+                />
+                <input
+                  type="text"
+                  placeholder="Subject"
+                  id="subject"
+                  required
+                  name="subject"
+                />
+                <textarea
+                  name="message"
+                  rows="5"
+                  cols="50"
+                  placeholder="Your Message"
+                  id="message"
+                  required
+                ></textarea>
+                <button type="submit" value="Send">
+                  Submit
+                </button>
+              </form>
             </div>
           </div>
         </div>
       </div>
+      {/* Footer */}
       <div className="cont-footer">
-      <h1>Thank you</h1>
+        <p>© Copyright created by Carl Arocha.</p>
+        <p>All rights reserved 2024.</p>
       </div>
     </section>
   );

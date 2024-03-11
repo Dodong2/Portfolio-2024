@@ -30,7 +30,7 @@ const SkillSection = () => {
         BACK-END
       </div>
     </div>
-    {/* Frontend*/}
+    {/* Frontend */}
     <div className="card">
         <ul className="list-group list-group-flush">
           <li className="list-group-item"><ImHtmlFive/> HTML</li>
