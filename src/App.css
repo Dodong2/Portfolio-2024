@@ -7,9 +7,11 @@ html,
 body {
   height: 100%;
 }
+
 ::-webkit-scrollbar {
   display: none;
 }
+
 :root {
   --red: red;
   --white: white;
@@ -20,10 +22,12 @@ body {
   --opyellow: rgba(244, 244, 0, 0.426);
   --darkBlue: #00008b;
 }
+
 @font-face {
   font-family: "Poppins";
   src: url("./components/fonts/Poppins-Light.ttf");
 }
+
 @font-face {
   font-family: "Poppins-Bold";
   src: url("./components/fonts/Poppins-Bold.ttf");
@@ -34,6 +38,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 /* navbar CSS*/
 header {
   position: fixed;
@@ -46,20 +51,24 @@ header {
   margin-bottom: 0;
   background-color: var(--white);
 }
+
 [data-bs-theme="dark"] header {
   background: none;
 }
+
 nav {
   transition: all 0.5s;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 /*Left Properties*/
 .left,
 .right {
   padding: 10px;
 }
+
 .left ul {
   font-size: 20px;
 }
@@ -98,9 +107,11 @@ li a:hover {
   color: var(--skyblue);
   text-shadow: 2px 2px 3px var(--skyblue);
 }
+
 .icons {
   margin-right: 10px;
 }
+
 /* ito ay para sa data-bs-theme once na matoggle yung btn mag-dark yung gustong elements */
 ul,
 li,
@@ -113,6 +124,7 @@ p,
   color: var(--black);
   transition: all 0.5s;
 }
+
 /* ito ay para sa data-bs-theme once na matoggle yung btn mag-white yung gustong elements */
 [data-bs-theme="dark"] ul,
 [data-bs-theme="dark"] li,
@@ -130,6 +142,7 @@ p,
 .right {
   display: flex;
 }
+
 .right input {
   justify-content: end;
 }
@@ -146,6 +159,7 @@ p,
   background: var(--gray);
   transition: all 0.5s ease;
 }
+
 .sidebar.open {
   left: -250px;
   transition: all ease-in-out.5;
@@ -155,6 +169,7 @@ p,
   max-width: 250px;
   padding: 0;
 }
+
 .sidebar-footer {
   display: flex;
   align-items: center;
@@ -162,12 +177,14 @@ p,
   font-size: 20px;
   padding: 10px 0 20px 0;
 }
+
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: -30px 0 10px 0;
 }
+
 .sidebar-img img {
   height: 60px;
   width: 60px;
@@ -185,12 +202,14 @@ p,
   flex: 1;
   padding: 10em 0 5em 0;
 }
+
 .home .txt-left {
   flex: 1 1 100px;
   padding: 3em 0 0 0;
   display: flex;
   justify-content: center;
 }
+
 .home .txt-left .txt-left-child {
   font-size: clamp(1rem, 0.3043rem + 3.4783vw, 1px);
   font-family: "Poppins-Bold";
@@ -203,6 +222,7 @@ p,
   letter-spacing: 2px;
   font-family: "Poppins-Bold";
 }
+
 .home .txt-left .txt-left-child .see:nth-child(1),
 .home .txt-left .txt-left-child span:nth-child(2) {
   color: transparent;
@@ -249,6 +269,7 @@ p,
 .txt-left .txt-left-child .btn:hover:before {
   left: 0;
 }
+
 .txt-left .txt-left-child .btn:hover {
   box-shadow: 0px 0px 15px var(--skyblue);
   letter-spacing: 0.3em;
@@ -264,10 +285,12 @@ p,
 [data-bs-theme="dark"] .txt-left .txt-left-child .btn {
   border: 1px solid var(--white);
 }
+
 [data-bs-theme="dark"] .modal-footer .btn {
   background: var(--white);
   color: var(--black);
 }
+
 /* img-right */
 .home .img-right {
   flex: 1 1 100px;
@@ -275,6 +298,7 @@ p,
   display: grid;
   place-items: center;
 }
+
 .home .img-right img {
   width: 300px;
   max-width: 100%;
@@ -286,6 +310,7 @@ p,
   height: 50px;
   width: 50px;
 }
+
 .modal-body {
   text-align: justify;
   line-height: 20px;
@@ -302,11 +327,13 @@ p,
   position: relative;
   padding: 5em 0 5em 0;
 }
+
 .skill .card {
   width: 18rem;
   font-size: clamp(1rem, 0.3043rem + 3.4783vw, 1rem);
   margin: 10px;
 }
+
 .skill .card:hover {
   box-shadow: 0px 0px 15px var(--skyblue);
   transition: all ease 0.5s;
@@ -317,16 +344,19 @@ p,
   background: var(--gray);
   color: var(--white);
 }
+
 [data-bs-theme="dark"] .ttl-bg {
   background: var(--opwhite);
   color: var(--black);
   transition: all 0.5s;
 }
+
 [data-bs-theme="dark"] .skill-ttl,
 [data-bs-theme="dark"] .skill-ttl-end {
   color: var(--white);
   transition: all 0.5s;
 }
+
 .skill-ttl {
   text-align: center;
   padding: 100px 0 0 0;
@@ -337,10 +367,12 @@ p,
   -webkit-text-stroke: 1.5px var(--black);
   background-color: transparent;
 }
+
 [data-bs-theme="dark"] .skill-ttl h1 span {
   -webkit-text-stroke: 1.5px var(--white);
   transition: all 0.5s;
 }
+
 .skill-ttl-end {
   text-align: center;
 }
@@ -350,6 +382,7 @@ p,
   text-align: center;
   padding: 100px 0 0 0;
 }
+
 .cont-head h1 span {
   color: transparent;
   -webkit-text-stroke: 1.5px var(--black);
@@ -360,14 +393,17 @@ p,
   color: var(--white);
   transition: all 0.5s;
 }
+
 [data-bs-theme="dark"] .cont-head h1 span {
   -webkit-text-stroke: 1.5px var(--white);
 }
+
 /* main cont */
 .main .cont {
   display: flex;
   flex: 1;
 }
+
 /* social-contact css */
 .cont .social-contact {
   flex: 1 1 100px;
@@ -376,15 +412,18 @@ p,
   padding: 3em 0 3em 0;
   font-family: "Poppins-Bold";
 }
+
 .social-contact .btn-cont {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
+
 .cont-icons {
   margin-right: 10px;
   margin-left: 3px;
 }
+
 .btn-cont .btn {
   padding: 10px;
   border: 1px solid var(--black);
@@ -396,6 +435,7 @@ p,
   width: 250px;
   text-align: left;
 }
+
 .btn-cont .btn::before {
   content: "";
   position: absolute;
@@ -407,14 +447,17 @@ p,
   transition: left 0.5s ease;
   z-index: -100;
 }
+
 .btn-cont .btn:hover:before {
   left: 0;
 }
+
 .btn-cont .btn:hover {
   box-shadow: 0px 0px 15px var(--skyblue);
   transition: 0.5s ease;
   color: var(--black);
 }
+
 [data-bs-theme="dark"] .btn-cont .btn {
   border: 1px solid var(--white);
 }
@@ -437,6 +480,7 @@ p,
   max-width: 400px;
   width: 100%;
 }
+
 .direct-contact .fill-up-forms form input,
 .direct-contact .fill-up-forms form button,
 .direct-contact .fill-up-forms form textarea {
@@ -461,15 +505,18 @@ p,
   transition: left 0.5s ease;
   z-index: -100;
 }
+
 .direct-contact .fill-up-forms form button:hover:before {
   left: 0;
 }
+
 .direct-contact .fill-up-forms form textarea:hover,
 .direct-contact .fill-up-forms form input:hover {
   box-shadow: 0px 0px 15px var(--skyblue);
   transition: 0.5s ease;
   color: var(--black);
 }
+
 .direct-contact .fill-up-forms form button:hover {
   box-shadow: 0px 0px 15px var(--skyblue);
   letter-spacing: 0.3em;
@@ -484,9 +531,11 @@ p,
   color: var(--white);
   transition: 0.5s ease;
 }
+
 [data-bs-theme="dark"] .direct-contact .fill-up-forms form button:hover {
   color: var(--black);
 }
+
 .cont-footer,
 .cont-footer p {
   font-family: "Poppins-Bold";
@@ -501,15 +550,24 @@ p,
   color: var(--black);
   transition: 0.5s ease;
 }
+
+.message {
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
+
 /* Typeswriters CSS */
 .mess h1 {
   font-size: clamp(1.5rem, 0.3043rem + 3.4783vw, 1rem);
 }
+
 .mess span {
   color: var(--darkBlue);
   text-shadow: 1px 1px 2px var(--darkBlue);
   transition: all 0.5s;
 }
+
 [data-bs-theme="dark"] .mess span {
   color: var(--skyblue);
   text-shadow: 1px 1px 2px var(--skyblue);
@@ -521,35 +579,43 @@ p,
   main {
     padding: 5em 0 5em 0;
   }
+
   /*Home properties media*/
   .main .home {
     flex-direction: column-reverse;
     padding: 5em 0 3em 0;
   }
+
   .home .txt-left {
     flex: 1 1 100px;
     padding: 0 0 0 0;
     display: flex;
     text-align: center;
   }
+
   .txt-left-child .txt-ab {
     text-align: center;
     position: relative;
   }
+
   .txt-left .txt-left-child .txt-ab .btn-home {
     justify-content: center;
   }
+
   /* Skill porperties media*/
   .main .skill {
     flex-direction: column;
   }
+
   .main .cont {
     flex-direction: column;
   }
+
   /* Typeswriters CSS media */
   .mess h1 {
     font-size: clamp(1.2rem, 0.3043rem + 3.4783vw, 1rem);
   }
+
   .direct-contact .fill-up-forms form {
     max-width: 300px;
     width: 100%;

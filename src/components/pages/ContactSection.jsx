@@ -4,8 +4,19 @@ import { MdContactPhone } from "react-icons/md";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/js/bootstrap";
 import { useRef } from "react";
+import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import PropTypes from "prop-types";
 const ContactSection = () => {
+  /* for message para makita yung message if success ba na send or not */
+  const [message, setMessage] = useState(null);
+  const Message = ({ message }) => {
+    return <div className="message">{message}</div>;
+  };
+  Message.propTypes = {
+    message: PropTypes.string.isRequired,
+  };
+
   /* for copy the context on button */
   const handleClick = () => {
     // Get the text content of the button
@@ -42,11 +53,11 @@ const ContactSection = () => {
       })
       .then(
         () => {
-          console.log("SUCCESS!");
+          setMessage("SUCCESS!");
           e.target.reset();
         },
         (error) => {
-          console.log("FAILED...", error.text);
+          setMessage("FAILED... " + error.text);
         }
       );
   };
@@ -118,6 +129,8 @@ const ContactSection = () => {
                 <button type="submit" value="Send">
                   Submit
                 </button>
+                {/* for message para makita yung message if success ba na send or not */}
+                {message && <Message message={message} />}
               </form>
             </div>
           </div>
